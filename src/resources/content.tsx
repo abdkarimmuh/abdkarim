@@ -5,6 +5,7 @@ import {
   Blog,
   Gallery,
   Home,
+  Lab,
   Newsletter,
   Person,
   Social,
@@ -100,7 +101,7 @@ const home: Home = {
 const about: About = {
   path: "/about",
   label: "About",
-  title: `About – ${person.name}`,
+  title: `About - ${person.name}`,
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
     display: true,
@@ -261,7 +262,7 @@ const blog: Blog = {
 const work: Work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
+  title: `Projects - ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
@@ -270,7 +271,7 @@ const work: Work = {
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
+  title: `Photo gallery - ${person.name}`,
   description: `A photo collection by ${person.name}`,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
@@ -318,4 +319,38 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const lab: Lab = {
+  path: "/lab",
+  label: "Lab",
+  title: "Where I build things that don't have a brief yet.",
+  description:
+    "This is where I build things that don't have a brief yet. Some experiments become client solutions. Some stay as tools I use internally. Some just teach me something useful and get archived.",
+  labs: [
+    {
+      name: "Tools",
+      description: "All-in-one Toolbox for Developers",
+      url: "https://tools.abdkarim.com",
+      image: "/images/og/home",
+      techStack: [
+        {
+          name: "React.js",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+        },
+        {
+          name: "Vite",
+          logo: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg",
+        },
+        {
+          name: "Tailwindcss",
+          logo: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.0~s.iziag2xd..svg",
+        },
+        {
+          name: "Shadcnui",
+          logo: "https://www.shadcndesign.com/academy/what-is-shadcnui.png",
+        },
+      ],
+    },
+  ],
+};
+
+export { person, social, newsletter, home, about, blog, work, gallery, lab };

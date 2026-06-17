@@ -241,3 +241,13 @@ export interface Gallery extends BasePageConfig {
     orientation: string;
   }>;
 }
+
+export interface Lab extends BasePageConfig {
+  labs: Array<{
+    url: string;
+    name: string;
+    description: string;
+    techStack?: Array<{ name: string; logo: string }>;
+    image?: string;
+  }>;
+}

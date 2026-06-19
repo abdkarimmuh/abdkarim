@@ -71,6 +71,7 @@ const home: Home = {
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
+  header: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Building bridges between design and code</>,
   featured: {
@@ -102,6 +103,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About - ${person.name}`,
+  header: `About - ${person.name}`,
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
     display: true,
@@ -253,7 +255,8 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: `Blog - ${person.name}`,
+  header: "Writing about design and tech...",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
@@ -263,6 +266,7 @@ const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects - ${person.name}`,
+  header: `Projects - ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
@@ -272,6 +276,7 @@ const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
   title: `Photo gallery - ${person.name}`,
+  header: `Photo gallery - ${person.name}`,
   description: `A photo collection by ${person.name}`,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
@@ -322,31 +327,50 @@ const gallery: Gallery = {
 const lab: Lab = {
   path: "/lab",
   label: "Lab",
-  title: "Where I build things that don't have a brief yet.",
+  title: `Lab - ${person.name}`,
+  header: "Where I build things that don't have a brief yet.",
   description:
     "This is where I build things that don't have a brief yet. Some experiments become client solutions. Some stay as tools I use internally. Some just teach me something useful and get archived.",
-  labs: [
+  products: [
     {
-      name: "Tools",
+      title: "Tools",
       description: "All-in-one Toolbox for Developers",
-      url: "https://tools.abdkarim.com",
-      image: "/images/og/home",
+      image: {
+        src: "/images/gallery/horizontal-1.jpg",
+        alt: "Tools",
+      },
+      link: "https://tools.abdkarim.com",
       techStack: [
         {
-          name: "React.js",
-          logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+          name: "React",
+          icon: "react",
         },
         {
-          name: "Vite",
-          logo: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg",
+          name: "NextJs",
+          icon: "nextjs",
         },
         {
           name: "Tailwindcss",
-          logo: "https://tailwindcss.com/_next/static/media/tailwindcss-mark.0~s.iziag2xd..svg",
+          icon: "tailwindcss",
+        },
+      ],
+    },
+    {
+      title: "Notes",
+      description: "Simple notes for me",
+      image: {
+        src: "/images/gallery/horizontal-2.jpg",
+        alt: "Tools",
+      },
+      link: "https://notes.abdkarim.com",
+      techStack: [
+        {
+          name: "React",
+          icon: "react",
         },
         {
-          name: "Shadcnui",
-          logo: "https://www.shadcndesign.com/academy/what-is-shadcnui.png",
+          name: "Tailwindcss",
+          icon: "tailwindcss",
         },
       ],
     },

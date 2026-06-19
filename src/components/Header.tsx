@@ -13,8 +13,8 @@ import {
   blog,
   work,
   gallery,
+  lab,
 } from "@/resources";
-import { lab } from "@/resources/content";
 
 import styles from "./Header.module.scss";
 import { ThemeToggle } from "./ThemeToggle";

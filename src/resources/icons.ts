@@ -34,7 +34,15 @@ import {
   PiImageDuotone,
   PiNuclearPlantDuotone,
 } from "react-icons/pi";
-import { SiJavascript, SiNextdotjs, SiFigma, SiSupabase } from "react-icons/si";
+import {
+  SiJavascript,
+  SiNextdotjs,
+  SiFigma,
+  SiSupabase,
+  SiReact,
+  SiVite,
+  SiTailwindcss,
+} from "react-icons/si";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -60,6 +68,9 @@ export const iconLibrary: Record<string, IconType> = {
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   document: HiOutlineDocument,
   rocket: HiOutlineRocketLaunch,
+  react: SiReact,
+  vite: SiVite,
+  tailwindcss: SiTailwindcss,
   javascript: SiJavascript,
   nextjs: SiNextdotjs,
   supabase: SiSupabase,

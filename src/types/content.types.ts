@@ -79,6 +79,8 @@ export interface BasePageConfig {
   label: string;
   /** Title of the page */
   title: string;
+  /** Header of the page */
+  header: string;
   /** Description for SEO and metadata */
   description: string;
   /** OG Image should be put inside `public/images` folder */
@@ -242,12 +244,26 @@ export interface Gallery extends BasePageConfig {
   }>;
 }
 
-export interface Lab extends BasePageConfig {
-  labs: Array<{
-    url: string;
+export interface LabItem {
+  /** Title for this product */
+  title: string;
+  /** Description for this product */
+  description: React.ReactNode;
+  /** Image for cover image this product */
+  image: {
+    src: string;
+    alt: string;
+  };
+  /** The link to demo / redirect to the product */
+  link: string;
+  /** Tech stack */
+  techStack: Array<{
     name: string;
-    description: string;
-    techStack?: Array<{ name: string; logo: string }>;
-    image?: string;
+    icon?: string;
   }>;
+}
+
+export interface Lab extends BasePageConfig {
+  /** List of apps, tools, design or anything else in the laboratory */
+  products: Array<LabItem>;
 }

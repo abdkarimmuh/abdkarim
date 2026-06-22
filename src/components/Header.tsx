@@ -5,16 +5,7 @@ import { useEffect, useState } from "react";
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 import { usePathname } from "next/navigation";
 
-import {
-  routes,
-  display,
-  person,
-  about,
-  blog,
-  work,
-  gallery,
-  lab,
-} from "@/resources";
+import { routes, display, person, about, blog, work } from "@/resources";
 
 import styles from "./Header.module.scss";
 import { ThemeToggle } from "./ThemeToggle";
@@ -176,44 +167,6 @@ export const Header = () => {
                       prefixIcon="book"
                       href="/blog"
                       selected={pathname.startsWith("/blog")}
-                    />
-                  </Row>
-                </>
-              )}
-              {routes["/gallery"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="gallery"
-                      href="/gallery"
-                      label={gallery.label}
-                      selected={pathname.startsWith("/gallery")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="gallery"
-                      href="/gallery"
-                      selected={pathname.startsWith("/gallery")}
-                    />
-                  </Row>
-                </>
-              )}
-              {routes["/lab"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="lab"
-                      href="/lab"
-                      label={lab.label}
-                      selected={pathname.startsWith("/lab")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="lab"
-                      href="/lab"
-                      selected={pathname.startsWith("/lab")}
                     />
                   </Row>
                 </>

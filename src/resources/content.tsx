@@ -1,16 +1,6 @@
-import { Line, Row, Text } from "@once-ui-system/core";
+import { Icon, Row } from "@once-ui-system/core";
 
-import {
-  About,
-  Blog,
-  Gallery,
-  Home,
-  Lab,
-  Newsletter,
-  Person,
-  Social,
-  Work,
-} from "@/types";
+import { About, Blog, Home, Newsletter, Person, Social, Work } from "@/types";
 
 const person: Person = {
   firstName: "Muhammad",
@@ -37,25 +27,25 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/abdkarimmuh",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/abdkarim/",
     essential: true,
   },
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
+    link: "https://www.instagram.com/abdkarim.muh",
     essential: false,
   },
   {
     name: "Threads",
     icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.threads.com/@abdkarim.muh",
     essential: true,
   },
   {
@@ -73,28 +63,22 @@ const home: Home = {
   title: `${person.name}'s Portfolio`,
   header: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Muhammad Abdul Karim</>,
   featured: {
     display: true,
     title: (
-      <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured work
-        </Text>
+      <Row vertical="center">
+        <Icon name="dot" onBackground="brand-medium" />
+        <strong className="ml-4">
+          Available for full-time & freelance projects
+        </strong>{" "}
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
     <>
-      I&apos;m Selene, a design engineer at{" "}
-      <Text as="span" size="xl" weight="strong">
-        ONCE UI
-      </Text>
-      , where I craft intuitive <br /> user experiences. After hours, I build my
-      own projects.
+      Software Engineer with 7+ Years of Experience. Specializing in React,
+      Next.js, TypeScript, and Modern Web Technologies.
     </>
   ),
 };
@@ -121,10 +105,13 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for
-        transforming complex challenges into simple, elegant design solutions.
-        Her work spans digital interfaces, interactive experiences, and the
-        convergence of design and technology.
+        Software Engineer with 7+ years of experience specializing in Frontend
+        Development. Experienced in building modern, high-performance web
+        applications using React, Next.js, JavaScript, and TypeScript. Strong
+        expertise in UI/UX development, application performance optimization,
+        API integration, and Agile collaboration. Passionate about delivering
+        scalable, maintainable, and user-centric digital products that align
+        with both business objectives and user needs.
       </>
     ),
   },
@@ -133,44 +120,106 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "PT Bank INA Perdana Tbk",
+        timeframe: "2025 - Present",
+        role: "Senior Front End Developer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20%
-            increase in user engagement and 30% faster load times.
+            Designed and developed scalable, responsive web applications using
+            React.js, optimizing performance across devices and low-bandwidth
+            environments.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows,
-            enabling designers to iterate 50% faster.
+            Implemented core banking functionalities, including account
+            management, transactions, loans, and customer interactions, ensuring
+            security and efficiency.
           </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
+          <>
+            Integrated real-time RESTFull APIs, enabling secure and efficient
+            frontend-backend communication.
+          </>,
+          <>
+            Conducted in-depth code reviews and integration testing, improving
+            code quality, maintainability, and UI stability.
+          </>,
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "PT Bank Rakyat Indonesia (Persero) Tbk",
+        timeframe: "2024 - 2025",
+        role: "Technical Lead (Tech Lead)",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple
-            platforms, improving design consistency by 40%.
+            Led a development team in building and maintaining a secure,
+            scalable banking web app, establishing coding standards and best
+            practices for maintainability.
           </>,
           <>
-            Led a cross-functional team to launch a new product line,
-            contributing to a 15% increase in overall company revenue.
+            Mentored junior developers and facilitated Agile ceremonies to
+            enhance team productivity.
+          </>,
+          <>
+            Collaborated with stakeholders to design and optimize fraud
+            prevention, real-time monitoring, biometric validation, and account
+            opening features.
+          </>,
+          <>
+            Led migration from legacy systems to modern, scalable platforms,
+            improving performance and maintainability.
+          </>,
+          <>
+            Built a CI/CD pipeline with Bitbucket, Bamboo, Docker, and OpenShift
+            for automated deployments.
+          </>,
+          <>
+            Troubleshot and resolved system issues, ensuring seamless
+            operations.
           </>,
         ],
-        images: [],
+      },
+      {
+        company: "PT Bank Rakyat Indonesia (Persero) Tbk",
+        timeframe: "2021 - 2023",
+        role: "Senior Front End Developer",
+        achievements: [
+          <>
+            Led the migration to modern web platforms using Micro Frontends and
+            optimized state management with Vuex / Pinia for seamless feature
+            transitions.
+          </>,
+          <>
+            Implemented core banking functionalities, including account
+            management, transactions, and customer interactions, ensuring
+            security and efficiency.
+          </>,
+          <>
+            Integrated real-time gRPC APIs, enabling secure and efficient
+            frontend-backend communication.
+          </>,
+          <>
+            Conducted in-depth code reviews and integration testing, improving
+            code quality, maintainability, and UI stability.
+          </>,
+        ],
+      },
+      {
+        company: "PT Tetamba Studio Kreasi",
+        timeframe: "2019 - 2021",
+        role: "Full-Stack Developer (Web & Mobile)",
+        achievements: [
+          <>
+            Designed, developed, and maintained full-stack web and mobile
+            applications for clients across diverse industries.
+          </>,
+          <>
+            Utilized cloud technologies and DevOps practices to streamline
+            deployment, scaling, and maintenance of applications.
+          </>,
+          <>
+            Performed code reviews and mentored junior developers, promoting
+            best practices and maintainable code.
+          </>,
+        ],
       },
     ],
   },
@@ -179,12 +228,19 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Bachelor in Informatics",
+        description: (
+          <>
+            Sekolah Tinggi Teknologi Nurul Fikri
+            <div>
+              Honors : <strong>cum laude</strong> (GPA: 3.77/4.00)
+            </div>
+          </>
+        ),
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Computer and Network Engineering",
+        description: <>SMK Negeri 3 Depok</>,
       },
     ],
   },
@@ -192,59 +248,138 @@ const about: About = {
     display: true, // set to false to hide this section
     title: "Technical skills",
     skills: [
+      // {
+      //   title: "Figma",
+      //   description: (
+      //     <>Able to prototype in Figma with Once UI with unnatural speed.</>
+      //   ),
+      //   tags: [
+      //     {
+      //       name: "Figma",
+      //       icon: "figma",
+      //     },
+      //   ],
+      // },
       {
-        title: "Figma",
-        description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
-        ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
+        title: "Frontend",
+        description: <>Frontend web skills</>,
         tags: [
           {
             name: "JavaScript",
             icon: "javascript",
           },
           {
-            name: "Next.js",
+            name: "Typescript",
+            icon: "typescript",
+          },
+          {
+            name: "Tailwindcss",
+            icon: "tailwindcss",
+          },
+          {
+            name: "React",
+            icon: "react",
+          },
+          {
+            name: "Nextjs",
             icon: "nextjs",
+          },
+          {
+            name: "Vue",
+            icon: "vue",
+          },
+          {
+            name: "Angular",
+            icon: "angular",
+          },
+        ],
+      },
+      {
+        title: "Mobile",
+        description: <>Frontend mobile skills</>,
+        tags: [
+          {
+            name: "React Native",
+            icon: "reactnative",
+          },
+          {
+            name: "Flutter",
+            icon: "flutter",
+          },
+        ],
+      },
+      {
+        title: "Backend",
+        description: <>Backend skills</>,
+        tags: [
+          {
+            name: "Golang",
+            icon: "golang",
+          },
+          {
+            name: "Node.js",
+            icon: "nodejs",
+          },
+          {
+            name: "PHP",
+            icon: "php",
+          },
+          {
+            name: "Laravel",
+            icon: "laravel",
+          },
+
+          {
+            name: "MySQL",
+            icon: "mysql",
+          },
+          {
+            name: "PostgreSQL",
+            icon: "postgresql",
           },
           {
             name: "Supabase",
             icon: "supabase",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
+      },
+      {
+        title: "DevOps",
+        description: <>DevOps skills</>,
+        tags: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "git",
+            icon: "git",
+          },
+          {
+            name: "Linux",
+            icon: "linux",
+          },
+          {
+            name: "Docker",
+            icon: "docker",
+          },
+          {
+            name: "Redhat Openshift",
+            icon: "openshift",
+          },
+          {
+            name: "Bamboo",
+            icon: "bamboo",
+          },
+        ],
+      },
+      {
+        title: "UI/UX",
+        description: <>UI/UX skills</>,
+        tags: [
+          {
+            name: "Figma",
+            icon: "figma",
+          },
+          {
+            name: "Canva",
+            icon: "canva",
           },
         ],
       },
@@ -272,109 +407,4 @@ const work: Work = {
   // All projects will be listed on the /home and /work routes
 };
 
-const gallery: Gallery = {
-  path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery - ${person.name}`,
-  header: `Photo gallery - ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
-};
-
-const lab: Lab = {
-  path: "/lab",
-  label: "Lab",
-  title: `Lab - ${person.name}`,
-  header: "Where I build things that don't have a brief yet.",
-  description:
-    "This is where I build things that don't have a brief yet. Some experiments become client solutions. Some stay as tools I use internally. Some just teach me something useful and get archived.",
-  products: [
-    {
-      title: "Tools",
-      description: "All-in-one Toolbox for Developers",
-      image: {
-        src: "/images/gallery/horizontal-1.jpg",
-        alt: "Tools",
-      },
-      link: "https://tools.abdkarim.com",
-      techStack: [
-        {
-          name: "React",
-          icon: "react",
-        },
-        {
-          name: "NextJs",
-          icon: "nextjs",
-        },
-        {
-          name: "Tailwindcss",
-          icon: "tailwindcss",
-        },
-      ],
-    },
-    {
-      title: "Notes",
-      description: "Simple notes for me",
-      image: {
-        src: "/images/gallery/horizontal-2.jpg",
-        alt: "Tools",
-      },
-      link: "https://notes.abdkarim.com",
-      techStack: [
-        {
-          name: "React",
-          icon: "react",
-        },
-        {
-          name: "Tailwindcss",
-          icon: "tailwindcss",
-        },
-      ],
-    },
-  ],
-};
-
-export { person, social, newsletter, home, about, blog, work, gallery, lab };
+export { person, social, newsletter, home, about, blog, work };

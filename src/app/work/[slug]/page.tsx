@@ -2,16 +2,14 @@ import {
   Meta,
   Schema,
   AvatarGroup,
-  Button,
   Column,
-  Flex,
   Heading,
   Media,
   Text,
   SmartLink,
   Row,
-  Avatar,
   Line,
+  Tag,
 } from "@once-ui-system/core";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -110,7 +108,16 @@ export default async function Project({
         </Text>
         <Heading variant="display-strong-m">{post.metadata.title}</Heading>
       </Column>
-      <Row marginBottom="32" horizontal="center">
+      {post.metadata.techStack && post.metadata.techStack.length > 0 && (
+        <Row wrap gap="8">
+          {post.metadata.techStack.map((item, index) => (
+            <Tag key={index} size="l" prefixIcon={item.icon}>
+              {item.name}
+            </Tag>
+          ))}
+        </Row>
+      )}
+      <Row marginBottom="32" marginTop="12" horizontal="center">
         <Row gap="16" vertical="center">
           {post.metadata.team && (
             <AvatarGroup reverse avatars={avatars} size="s" />

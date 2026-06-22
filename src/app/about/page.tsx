@@ -97,7 +97,7 @@ export default function About() {
           >
             <Avatar src={person.avatar} size="xl" />
             <Row gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
+              <Icon onBackground="brand-medium" name="globe" />
               {person.location}
             </Row>
             {person.languages && person.languages.length > 0 && (
@@ -359,27 +359,6 @@ export default function About() {
                           >
                             {tag.name}
                           </Tag>
-                        ))}
-                      </Row>
-                    )}
-                    {skill.images && skill.images.length > 0 && (
-                      <Row fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
-                          <Row
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            minWidth={image.width}
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              sizes={image.width.toString()}
-                              alt={image.alt}
-                              src={image.src}
-                            />
-                          </Row>
                         ))}
                       </Row>
                     )}

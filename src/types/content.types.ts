@@ -102,7 +102,6 @@ export interface Home extends BasePageConfig {
   featured: {
     display: boolean;
     title: React.ReactNode;
-    href: string;
   };
   /** The sub text which appears below the headline */
   subline: React.ReactNode;
@@ -201,17 +200,6 @@ export interface About extends BasePageConfig {
         name: string;
         icon?: string;
       }>;
-      /** Images related to the skill */
-      images?: Array<{
-        /** Image source path */
-        src: string;
-        /** Image alt text */
-        alt: string;
-        /** Image width ratio */
-        width: number;
-        /** Image height ratio */
-        height: number;
-      }>;
     }>;
   };
 }
@@ -227,43 +215,3 @@ export type Blog = BasePageConfig;
  * @description Configuration for the Work/Projects page, including metadata and navigation label.
  */
 export type Work = BasePageConfig;
-
-/**
- * Gallery page configuration.
- * @description Configuration for the Gallery page, including metadata, navigation label, and image list.
- */
-export interface Gallery extends BasePageConfig {
-  /** List of images in the gallery */
-  images: Array<{
-    /** Image source path */
-    src: string;
-    /** Image alt text */
-    alt: string;
-    /** Image orientation (horizontal/vertical) */
-    orientation: string;
-  }>;
-}
-
-export interface LabItem {
-  /** Title for this product */
-  title: string;
-  /** Description for this product */
-  description: React.ReactNode;
-  /** Image for cover image this product */
-  image: {
-    src: string;
-    alt: string;
-  };
-  /** The link to demo / redirect to the product */
-  link: string;
-  /** Tech stack */
-  techStack: Array<{
-    name: string;
-    icon?: string;
-  }>;
-}
-
-export interface Lab extends BasePageConfig {
-  /** List of apps, tools, design or anything else in the laboratory */
-  products: Array<LabItem>;
-}

@@ -6,7 +6,9 @@ import {
   Column,
   Flex,
   Heading,
+  Row,
   SmartLink,
+  Tag,
   Text,
 } from "@once-ui-system/core";
 
@@ -19,6 +21,7 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string }[];
   link: string;
+  techStack?: { name: string; icon: string }[];
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -29,6 +32,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  techStack,
 }) => {
   return (
     <Column fillWidth gap="m">
@@ -49,16 +53,37 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       >
         {title && (
           <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-              {title}
-            </Heading>
+            <Column>
+              <Heading as="h2" wrap="balance" variant="heading-strong-xl">
+                {title}
+              </Heading>
+              {techStack && techStack.length > 0 && (
+                <Row wrap gap="8" paddingTop="8">
+                  {techStack.map((item, index) => (
+                    <Tag
+                      key={`${title}-${index}`}
+                      size="l"
+                      prefixIcon={item.icon}
+                    >
+                      {item.name}
+                    </Tag>
+                  ))}
+                </Row>
+              )}
+            </Column>
           </Flex>
         )}
         {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
           <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
+            {avatars?.length > 0 && (
+              <AvatarGroup avatars={avatars} size="m" reverse />
+            )}
             {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
+              <Text
+                wrap="balance"
+                variant="body-default-s"
+                onBackground="neutral-weak"
+              >
                 {description}
               </Text>
             )}

@@ -1,4 +1,4 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
+import { Column, Heading, Meta, Row, Schema } from "@once-ui-system/core";
 
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
@@ -42,10 +42,20 @@ export default function Blog() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Search items={kbarItems} />
-      <Heading marginBottom="l" variant="heading-strong-xl" marginLeft="24">
-        {blog.header}
-      </Heading>
+      <Row
+        vertical="center"
+        horizontal="between"
+        gap="m"
+        marginBottom="l"
+        s={{ direction: "column", horizontal: "start" }}
+      >
+        <Heading variant="heading-strong-xl" marginLeft="24">
+          {blog.header}
+        </Heading>
+        <Row vertical="center" horizontal="center" fillWidth>
+          <Search items={kbarItems} />
+        </Row>
+      </Row>
       <Column fillWidth flex={1} gap="40">
         <Posts range={[1, 1]} thumbnail />
         <Posts range={[2, 3]} columns="2" thumbnail direction="column" />

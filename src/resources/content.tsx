@@ -67,11 +67,9 @@ const home: Home = {
   featured: {
     display: true,
     title: (
-      <Row vertical="center">
+      <Row vertical="center" paddingRight="8">
         <Icon name="dot" onBackground="brand-medium" />
-        <strong className="ml-4">
-          Available for full-time & freelance projects
-        </strong>{" "}
+        <strong>Available for full-time & freelance projects</strong>
       </Row>
     ),
   },

@@ -119,35 +119,6 @@ export default function About() {
             vertical="center"
             marginBottom="32"
           >
-            {about.calendar.display && (
-              <Row
-                fitWidth
-                border="brand-alpha-medium"
-                background="brand-alpha-weak"
-                radius="full"
-                padding="4"
-                gap="8"
-                marginBottom="m"
-                vertical="center"
-                className={styles.blockAlign}
-                style={{
-                  backdropFilter: "blur(var(--static-space-1))",
-                }}
-              >
-                <Icon
-                  paddingLeft="12"
-                  name="calendar"
-                  onBackground="brand-weak"
-                />
-                <Row paddingX="8">Schedule a call</Row>
-                <IconButton
-                  href={about.calendar.link}
-                  data-border="rounded"
-                  variant="secondary"
-                  icon="chevronRight"
-                />
-              </Row>
-            )}
             <Heading className={styles.textAlign} variant="display-strong-xl">
               {person.name}
             </Heading>
@@ -161,7 +132,7 @@ export default function About() {
             {social.length > 0 && (
               <Row
                 className={styles.blockAlign}
-                paddingTop="20"
+                paddingTop="32"
                 paddingBottom="8"
                 gap="8"
                 wrap
@@ -207,10 +178,61 @@ export default function About() {
               textVariant="body-default-l"
               fillWidth
               gap="m"
-              marginBottom="xl"
+              marginBottom="m"
             >
               {about.intro.description}
             </Column>
+          )}
+
+          {(about.resume.display || about.calendar.display) && (
+            <Row
+              fitWidth
+              gap="m"
+              marginBottom="xl"
+              horizontal="center"
+              vertical="center"
+              s={{ direction: "column", horizontal: "start" }}
+            >
+              {about.resume.display && (
+                <Button
+                  href={about.resume.link}
+                  prefixIcon="download"
+                  label="Download Resume"
+                  data-border="rounded"
+                  size="m"
+                />
+              )}
+              {about.calendar.display && (
+                <Row
+                  fitWidth
+                  border="brand-alpha-medium"
+                  background="brand-alpha-weak"
+                  radius="full"
+                  padding="4"
+                  gap="8"
+                  marginBottom="xs"
+                  marginTop="xs"
+                  vertical="center"
+                  className={styles.blockAlign}
+                  style={{ backdropFilter: "blur(var(--static-space-1))" }}
+                >
+                  <Icon
+                    paddingLeft="12"
+                    name="calendar"
+                    onBackground="brand-weak"
+                  />
+                  <Row paddingX="8" flex={1}>
+                    Schedule a call
+                  </Row>
+                  <IconButton
+                    href={about.calendar.link}
+                    data-border="rounded"
+                    variant="secondary"
+                    icon="chevronRight"
+                  />
+                </Row>
+              )}
+            </Row>
           )}
 
           {about.work.display && (

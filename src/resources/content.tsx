@@ -100,6 +100,10 @@ const about: About = {
     display: true,
     link: "https://cal.com",
   },
+  resume: {
+    display: true,
+    link: "/files/muhammad-abdul-karim-resume.pdf",
+  },
   intro: {
     display: true,
     title: "Introduction",

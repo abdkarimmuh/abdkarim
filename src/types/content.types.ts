@@ -131,6 +131,13 @@ export interface About extends BasePageConfig {
     /** Link to the calendar */
     link: string;
   };
+  /** Resume section configuration */
+  resume: {
+    /** Whether to display the resume */
+    display: boolean;
+    /** Link to download the resume */
+    link: string;
+  };
   /** Introduction section */
   intro: {
     /** Whether to display the introduction */

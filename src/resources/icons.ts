@@ -14,6 +14,7 @@ import {
   FaTelegram,
 } from "react-icons/fa6";
 import { GoDotFill } from "react-icons/go";
+import { HiDownload } from "react-icons/hi";
 import {
   HiArrowUpRight,
   HiOutlineLink,
@@ -69,6 +70,7 @@ export const iconLibrary: Record<string, IconType> = {
   grid: PiGridFourDuotone,
   book: PiBookBookmarkDuotone,
   openLink: HiOutlineLink,
+  download: HiDownload,
   calendar: HiCalendarDays,
   home: PiHouseDuotone,
   gallery: PiImageDuotone,

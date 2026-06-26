@@ -194,13 +194,34 @@ export default function About() {
               s={{ direction: "column", horizontal: "start" }}
             >
               {about.resume.display && (
-                <Button
-                  href={about.resume.link}
-                  prefixIcon="download"
-                  label="Download Resume"
-                  data-border="rounded"
-                  size="m"
-                />
+                <Row
+                  fitWidth
+                  border="brand-alpha-medium"
+                  background="brand-alpha-weak"
+                  radius="full"
+                  padding="4"
+                  gap="8"
+                  marginBottom="xs"
+                  marginTop="xs"
+                  vertical="center"
+                  className={styles.blockAlign}
+                  style={{ backdropFilter: "blur(var(--static-space-1))" }}
+                >
+                  <Icon
+                    paddingLeft="12"
+                    name="document"
+                    onBackground="brand-weak"
+                  />
+                  <Row paddingX="8" flex={1}>
+                    Download Resume
+                  </Row>
+                  <IconButton
+                    href={about.resume.link}
+                    data-border="rounded"
+                    variant="secondary"
+                    icon="download"
+                  />
+                </Row>
               )}
               {about.calendar.display && (
                 <Row

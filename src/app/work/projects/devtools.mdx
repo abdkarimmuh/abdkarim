@@ -1,0 +1,60 @@
+---
+title: "Developer Tools"
+publishedAt: "2026-04-01"
+summary: "All-in-one Toolbox for Developers."
+images:
+  - "/images/projects/devtools/cover.png"
+team:
+  - name: "Muhamamd Abdul Karim"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/abdkarim/"
+link: "https://dev-tools-app-iota.vercel.app"
+techStack:
+  - name: "React"
+    icon: "react"
+  - name: "NextJs"
+    icon: "nextJs"
+  - name: "Tailwindcss"
+    icon: "tailwindcss"
+---
+
+## Overview
+
+DevTools is a collection of browser-based utilities designed to streamline everyday development workflows. Instead of relying on multiple websites or desktop applications, the platform brings together a wide range of tools for formatting, encoding, generating, validating, and debugging data in a single, fast, and intuitive interface.
+
+The project was built with a strong focus on developer experience, performance, and privacy. All processing happens directly in the browser, ensuring that sensitive data such as JSON, JWTs, passwords, and hashes never leave the user's device.
+
+## Key Features
+
+- **Code Formatting & Validation**: Format, minify, and validate JSON, JavaScript, HTML, CSS, SCSS, and SASS using Prettier and browser-based processing. Invalid JSON is detected with clear error messages for faster debugging.
+- **Encoding & Security Utilities**: Encode and decode Base64, URL strings, and HTML entities, decode JWT tokens with readable timestamps and expiration status, and generate SHA-1, SHA-256, SHA-384, and SHA-512 hashes using the Web Crypto API.
+- **Developer Productivity Tools**: Compare text differences with an LCS-based Diff Checker, test regular expressions with live highlighting and capture groups, and convert text into multiple naming conventions including camelCase, PascalCase, snake_case, kebab-case, Title Case, and more.
+- **Content & Identifier Generators**: Generate UUIDs (v1, v4, and v7), customizable Lorem Ipsum text, and secure passwords with configurable character sets, length, and password strength indicators.
+- **Frontend Utilities**: Convert colors between HEX, RGB, and HSL formats, use a native color picker with live previews, and convert PX to REM (and vice versa) with customizable base font sizes and reference tables.
+- **Privacy-First Processing**: All tools execute entirely in the browser without sending user data to external servers, making the platform suitable for handling sensitive development data securely.
+
+## Technologies Used
+
+- **Next.js 16**: Built using the App Router for a modern, scalable application architecture.
+- **TypeScript**: Provides type safety, improved maintainability, and a better developer experience.
+- **Tailwind CSS v4**: Used for utility-first styling and responsive layouts.
+- **shadcn/ui**: Supplies accessible, reusable UI components with a consistent design language.
+- **Tabler Icons**: Delivers a clean and lightweight icon set across the application.
+- **Prettier Standalone**: Powers client-side code formatting directly within the browser.
+- **Web Crypto API**: Enables secure client-side hash generation without external dependencies.
+- **next-themes**: Provides seamless dark and light mode support.
+
+## Challenges and Learnings
+
+One of the primary challenges was implementing complex developer utilities that operate entirely on the client side while maintaining excellent performance. Features such as JSON formatting, JWT decoding, diff comparison, and regex testing required efficient algorithms and responsive interfaces to deliver instant feedback.
+
+Another important consideration was creating a consistent user experience across tools with very different functionality. Establishing reusable UI patterns, shared layouts, and common interaction flows significantly improved usability and simplified future feature development.
+
+## Outcome
+
+DevTools consolidates a wide variety of developer utilities into a single web application, eliminating the need to switch between multiple online tools during development. By prioritizing speed, privacy, and ease of use, the platform provides a more efficient workflow for developers performing everyday tasks such as formatting code, validating data, generating identifiers, encoding content, and debugging frontend assets.
+
+---
+
+This project demonstrates expertise in building high-performance frontend applications, designing developer-focused user experiences, and implementing browser-native solutions that balance functionality, security, and maintainability.

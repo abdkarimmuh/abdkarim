@@ -47,14 +47,12 @@ export default function Blog() {
         horizontal="between"
         gap="m"
         marginBottom="l"
-        s={{ direction: "column", horizontal: "start" }}
+        s={{ direction: "column", horizontal: "center" }}
       >
         <Heading variant="heading-strong-xl" marginLeft="24">
           {blog.header}
         </Heading>
-        <Row vertical="center" horizontal="center" fillWidth>
-          <Search items={kbarItems} />
-        </Row>
+        <Search items={kbarItems} />
       </Row>
       <Column fillWidth flex={1} gap="40">
         <Posts range={[1, 1]} thumbnail />

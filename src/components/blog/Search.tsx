@@ -52,7 +52,7 @@ export function Search({ items = [] }: { items?: ServerItem[] }) {
           onBackground="neutral-weak"
           marginLeft="8"
         >
-          ⌘K
+          ⌘ K
         </Text>
       </Row>
     </Kbar>

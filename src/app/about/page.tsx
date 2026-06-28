@@ -187,71 +187,43 @@ export default function About() {
           {(about.resume.display || about.calendar.display) && (
             <Row
               fitWidth
-              gap="m"
+              gap="s"
               marginBottom="xl"
               horizontal="center"
               vertical="center"
               s={{ direction: "column", horizontal: "start" }}
             >
               {about.resume.display && (
-                <Row
-                  fitWidth
-                  border="brand-alpha-medium"
-                  background="brand-alpha-weak"
-                  radius="full"
-                  padding="4"
-                  gap="8"
-                  marginBottom="xs"
-                  marginTop="xs"
-                  vertical="center"
-                  className={styles.blockAlign}
-                  style={{ backdropFilter: "blur(var(--static-space-1))" }}
+                <Button
+                  id="download"
+                  data-border="rounded"
+                  href={about.resume.link}
+                  variant="secondary"
+                  size="m"
+                  weight="default"
+                  arrowIcon
                 >
-                  <Icon
-                    paddingLeft="12"
-                    name="document"
-                    onBackground="brand-weak"
-                  />
-                  <Row paddingX="8" flex={1}>
+                  <Row gap="8" vertical="center">
+                    <Icon size="xs" name="download" onBackground="brand-weak" />
                     Download Resume
                   </Row>
-                  <IconButton
-                    href={about.resume.link}
-                    data-border="rounded"
-                    variant="secondary"
-                    icon="download"
-                  />
-                </Row>
+                </Button>
               )}
               {about.calendar.display && (
-                <Row
-                  fitWidth
-                  border="brand-alpha-medium"
-                  background="brand-alpha-weak"
-                  radius="full"
-                  padding="4"
-                  gap="8"
-                  marginBottom="xs"
-                  marginTop="xs"
-                  vertical="center"
-                  className={styles.blockAlign}
-                  style={{ backdropFilter: "blur(var(--static-space-1))" }}
+                <Button
+                  id="calendar"
+                  data-border="rounded"
+                  href={about.resume.link}
+                  variant="secondary"
+                  size="m"
+                  weight="default"
+                  arrowIcon
                 >
-                  <Icon
-                    paddingLeft="12"
-                    name="calendar"
-                    onBackground="brand-weak"
-                  />
-                  <Row paddingX="8" flex={1}>
+                  <Row gap="8" vertical="center" paddingRight="4">
+                    <Icon size="xs" name="calendar" onBackground="brand-weak" />
                     Schedule a call
                   </Row>
-                  <IconButton
-                    href={about.calendar.link}
-                    data-border="rounded"
-                    variant="secondary"
-                    icon="chevronRight"
-                  />
-                </Row>
+                </Button>
               )}
             </Row>
           )}

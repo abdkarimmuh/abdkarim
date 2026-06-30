@@ -22,39 +22,46 @@ techStack:
 
 ## Overview
 
-DevTools is a collection of browser-based utilities designed to streamline everyday development workflows. Instead of relying on multiple websites or desktop applications, the platform brings together a wide range of tools for formatting, encoding, generating, validating, and debugging data in a single, fast, and intuitive interface.
+DevTools is a comprehensive collection of browser-based utilities built to support everyday developer workflows — from formatting and encoding to cryptography, generators, and CSS debugging. Rather than juggling dozens of separate websites or desktop tools, this platform brings them all together into one fast, unified interface accessible from a single tab.
 
-The project was built with a strong focus on developer experience, performance, and privacy. All processing happens directly in the browser, ensuring that sensitive data such as JSON, JWTs, passwords, and hashes never leave the user's device.
+The application was designed with developer experience and privacy as core priorities. Every tool runs entirely client-side, meaning sensitive inputs such as JSON payloads, JWT tokens, passwords, encryption keys, and hashes are processed locally in the browser and never transmitted to a server.
 
 ## Key Features
 
-- **Code Formatting & Validation**: Format, minify, and validate JSON, JavaScript, HTML, CSS, SCSS, and SASS using Prettier and browser-based processing. Invalid JSON is detected with clear error messages for faster debugging.
-- **Encoding & Security Utilities**: Encode and decode Base64, URL strings, and HTML entities, decode JWT tokens with readable timestamps and expiration status, and generate SHA-1, SHA-256, SHA-384, and SHA-512 hashes using the Web Crypto API.
-- **Developer Productivity Tools**: Compare text differences with an LCS-based Diff Checker, test regular expressions with live highlighting and capture groups, and convert text into multiple naming conventions including camelCase, PascalCase, snake_case, kebab-case, Title Case, and more.
-- **Content & Identifier Generators**: Generate UUIDs (v1, v4, and v7), customizable Lorem Ipsum text, and secure passwords with configurable character sets, length, and password strength indicators.
-- **Frontend Utilities**: Convert colors between HEX, RGB, and HSL formats, use a native color picker with live previews, and convert PX to REM (and vice versa) with customizable base font sizes and reference tables.
-- **Privacy-First Processing**: All tools execute entirely in the browser without sending user data to external servers, making the platform suitable for handling sensitive development data securely.
+- **Code Formatting & Validation**: Format, minify, and validate JSON, JavaScript, TypeScript, HTML, CSS/SCSS/SASS, and SQL (with selectable dialects including MySQL, PostgreSQL, T-SQL, SQLite, and PL/SQL) using Prettier and sql-formatter.
+- **Encoding & Token Utilities**: Encode/decode Base64 with a one-click swap, encode/decode URL strings and HTML entities, decode JWT tokens into readable headers and payloads with automatic timestamp conversion and expiration badges, and generate SHA-1/256/384/512 hashes via the Web Crypto API.
+- **Text Processing Tools**: Compare two texts line-by-line with an LCS-based Diff Checker showing additions and deletions, test regex patterns live with flag toggles and capture group breakdowns, convert text across 8 naming conventions simultaneously, and edit Markdown in a split-view live preview editor.
+- **Generators**: Bulk-generate UUIDs (v1, v4, v7) up to 100 at a time, create customizable Lorem Ipsum placeholder text, generate strong passwords with adjustable length and charset options plus a strength indicator, and produce downloadable QR codes and barcodes (CODE128, EAN-13, EAN-8, UPC, CODE39, ITF-14, MSI, Pharmacode).
+- **Cryptography Suite**: Encrypt and decrypt text using AES-256, DES/3DES, and RC4 ciphers; generate RSA key pairs (1024–4096-bit) for OAEP encryption/decryption; generate ECDSA key pairs for signing and signature verification; and produce HMAC API signatures with configurable hash algorithms and key/output encodings.
+- **Frontend Utilities**: Convert colors between HEX, RGB, and HSL with a native color picker and live preview, and convert PX to REM (and back) with a customizable base font size and quick-reference table.
+- **Persistent Per-Tool State**: A custom `useToolState` hook backed by Zustand keeps each tool's input/output intact when navigating between pages, so work is never lost mid-session.
 
 ## Technologies Used
 
-- **Next.js 16**: Built using the App Router for a modern, scalable application architecture.
-- **TypeScript**: Provides type safety, improved maintainability, and a better developer experience.
-- **Tailwind CSS v4**: Used for utility-first styling and responsive layouts.
-- **shadcn/ui**: Supplies accessible, reusable UI components with a consistent design language.
-- **Tabler Icons**: Delivers a clean and lightweight icon set across the application.
-- **Prettier Standalone**: Powers client-side code formatting directly within the browser.
-- **Web Crypto API**: Enables secure client-side hash generation without external dependencies.
-- **next-themes**: Provides seamless dark and light mode support.
+- **Next.js (App Router)**: Provides the routing structure and overall application architecture.
+- **TypeScript**: Ensures type safety and a more maintainable codebase across all tools.
+- **Tailwind CSS v4**: Handles utility-first styling and responsive design.
+- **shadcn/ui**: Supplies accessible, composable UI primitives with a consistent visual language.
+- **Lucide React**: Provides the icon set used throughout the interface.
+- **Zustand**: Manages in-memory, per-tool state for a smooth multi-tool experience.
+- **Prettier (standalone build)**: Runs entirely in the browser to power JS/TS/HTML/CSS formatting.
+- **sql-formatter**: Handles SQL formatting across multiple dialects.
+- **crypto-js + Web Crypto API**: Powers AES/DES/RC4 ciphers (crypto-js) and RSA/ECDSA/HMAC operations (native Web Crypto).
+- **marked + @tailwindcss/typography**: Renders live Markdown previews with polished typographic styling.
+- **qrcode & JsBarcode**: Generate downloadable QR codes and barcodes.
+- **next-themes**: Enables dark/light mode switching.
 
 ## Challenges and Learnings
 
-One of the primary challenges was implementing complex developer utilities that operate entirely on the client side while maintaining excellent performance. Features such as JSON formatting, JWT decoding, diff comparison, and regex testing required efficient algorithms and responsive interfaces to deliver instant feedback.
+Integrating such a broad range of tools — from formatters and encoders to full cryptographic primitives — into a single cohesive application required careful architectural planning. Each category had different state, validation, and output requirements, which made a unified, reusable pattern (such as the `useToolState` hook) essential for keeping the codebase maintainable as the number of tools grew well beyond a dozen.
 
-Another important consideration was creating a consistent user experience across tools with very different functionality. Establishing reusable UI patterns, shared layouts, and common interaction flows significantly improved usability and simplified future feature development.
+Implementing the cryptography tools in particular required balancing usability with correctness: generating and formatting RSA/ECDSA key pairs in PEM format, handling multiple key/output encodings for HMAC, and supporting legacy ciphers like DES alongside modern AES-256 all needed to work reliably entirely on the client side without exposing any sensitive data externally.
+
+Designing the navigation system — where adding a single entry to `config/nav.ts` automatically updates the sidebar, header, and home page — also reinforced the value of a single source of truth for scaling the project smoothly as new tools were added.
 
 ## Outcome
 
-DevTools consolidates a wide variety of developer utilities into a single web application, eliminating the need to switch between multiple online tools during development. By prioritizing speed, privacy, and ease of use, the platform provides a more efficient workflow for developers performing everyday tasks such as formatting code, validating data, generating identifiers, encoding content, and debugging frontend assets.
+DevTools brings together over 25 developer utilities spanning formatting, encoding, text processing, generation, cryptography, and frontend debugging into one cohesive, privacy-respecting platform. By keeping all computation client-side and designing a consistent, extensible architecture, the project delivers a fast and reliable alternative to scattered single-purpose tools, making everyday development tasks — from decoding a JWT to generating an RSA key pair — significantly more efficient.
 
 ---
 

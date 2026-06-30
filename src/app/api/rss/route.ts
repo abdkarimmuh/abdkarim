@@ -8,7 +8,10 @@ export async function GET() {
 
   // Sort posts by date (newest first)
   const sortedPosts = posts.sort((a, b) => {
-    return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
+    return (
+      new Date(b.metadata.publishedAt).getTime() -
+      new Date(a.metadata.publishedAt).getTime()
+    );
   });
 
   // Generate RSS XML
@@ -40,7 +43,7 @@ export async function GET() {
       ${post.metadata.image ? `<enclosure url="${baseURL}${post.metadata.image}" type="image/jpeg" />` : ""}
       ${post.metadata.tag ? `<category>${post.metadata.tag}</category>` : ""}
       <author>${person.email || "noreply@example.com"} (${person.name})</author>
-    </item>`,
+    </item>`
       )
       .join("")}
   </channel>
@@ -50,7 +53,8 @@ export async function GET() {
   return new NextResponse(rssXml, {
     headers: {
       "Content-Type": "application/xml",
-      "Cache-Control": "public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400",
+      "Cache-Control":
+        "public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400",
     },
   });
 }

@@ -107,6 +107,15 @@ export default async function Project({
           {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
         </Text>
         <Heading variant="display-strong-m">{post.metadata.title}</Heading>
+        {post.metadata.link && (
+          <SmartLink
+            suffixIcon="arrowUpRightFromSquare"
+            style={{ margin: "0", width: "fit-content" }}
+            href={post.metadata.link}
+          >
+            <Text variant="body-default-s">View project</Text>
+          </SmartLink>
+        )}
       </Column>
       {post.metadata.techStack && post.metadata.techStack.length > 0 && (
         <Row wrap gap="8">

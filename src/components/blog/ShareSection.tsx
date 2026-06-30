@@ -49,7 +49,8 @@ const socialPlatforms: Record<string, SocialPlatform> = {
     name: "whatsapp",
     icon: "whatsapp",
     label: "WhatsApp",
-    generateUrl: (title, url) => `https://wa.me/?text=${encodeURIComponent(`${title} ${url}`)}`,
+    generateUrl: (title, url) =>
+      `https://wa.me/?text=${encodeURIComponent(`${title} ${url}`)}`,
   },
   reddit: {
     name: "reddit",
@@ -100,7 +101,10 @@ export function ShareSection({ title, url }: ShareSectionProps) {
   // Get enabled platforms
   const enabledPlatforms = Object.entries(socialSharing.platforms)
     .filter(([_, enabled]) => enabled && _ !== "copyLink")
-    .map(([platformKey]) => ({ key: platformKey, ...socialPlatforms[platformKey] }))
+    .map(([platformKey]) => ({
+      key: platformKey,
+      ...socialPlatforms[platformKey],
+    }))
     .filter((platform) => platform.name); // Filter out platforms that don't exist in our definitions
 
   return (
@@ -120,7 +124,12 @@ export function ShareSection({ title, url }: ShareSectionProps) {
         ))}
 
         {socialSharing.platforms.copyLink && (
-          <Button variant="secondary" size="s" onClick={handleCopy} prefixIcon="openLink" />
+          <Button
+            variant="secondary"
+            size="s"
+            onClick={handleCopy}
+            prefixIcon="openLink"
+          />
         )}
       </Row>
     </Row>

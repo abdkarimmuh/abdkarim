@@ -2,7 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-import { Flex, Spinner, Button, Heading, Column, PasswordInput } from "@once-ui-system/core";
+import {
+  Flex,
+  Spinner,
+  Button,
+  Heading,
+  Column,
+  PasswordInput,
+} from "@once-ui-system/core";
 import { usePathname } from "next/navigation";
 
 import NotFound from "@/app/not-found";

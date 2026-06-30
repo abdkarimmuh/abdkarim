@@ -51,7 +51,9 @@ async function extractMetadata(html: string) {
   const descMatch =
     html.match(/<meta[^>]*name="description"[^>]*content="([^"]+)"[^>]*>/i) ||
     html.match(/<meta[^>]*content="([^"]+)"[^>]*name="description"[^>]*>/i) ||
-    html.match(/<meta[^>]*property="og:description"[^>]*content="([^"]+)"[^>]*>/i);
+    html.match(
+      /<meta[^>]*property="og:description"[^>]*content="([^"]+)"[^>]*>/i
+    );
   const imageMatch =
     html.match(/<meta[^>]*property="og:image"[^>]*content="([^"]+)"[^>]*>/i) ||
     html.match(/<meta[^>]*content="([^"]+)"[^>]*property="og:image"[^>]*>/i);
@@ -92,15 +94,16 @@ export async function GET(request: Request) {
   } catch (error) {
     console.error(
       "Error fetching metadata:",
-      error instanceof Error ? error.message : String(error),
+      error instanceof Error ? error.message : String(error)
     );
 
     return NextResponse.json(
       {
         error: "Failed to fetch metadata",
-        message: error instanceof Error ? error.message : "Unknown error occurred",
+        message:
+          error instanceof Error ? error.message : "Unknown error occurred",
       },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

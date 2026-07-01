@@ -2,19 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 
-import { Row, ToggleButton, useTheme } from "@once-ui-system/core";
+import { ToggleButton, useTheme } from "@once-ui-system/core";
 
 export const ThemeToggle: React.FC = () => {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const [currentTheme, setCurrentTheme] = useState("light");
-
-  useEffect(() => {
-    setMounted(true);
-    setCurrentTheme(
-      document.documentElement.getAttribute("data-theme") || "light"
-    );
-  }, []);
 
   useEffect(() => {
     setCurrentTheme(

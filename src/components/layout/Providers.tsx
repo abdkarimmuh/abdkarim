@@ -18,8 +18,8 @@ import {
   TransitionStyle,
 } from "@once-ui-system/core";
 
-import { style, dataStyle } from "../resources";
-import { iconLibrary } from "../resources/icons";
+import { style, dataStyle } from "@/resources";
+import { iconLibrary } from "@/resources/icons";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (

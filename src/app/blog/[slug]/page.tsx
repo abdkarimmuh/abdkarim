@@ -6,7 +6,6 @@ import {
   Column,
   Heading,
   HeadingNav,
-  Icon,
   Row,
   Text,
   SmartLink,
@@ -73,11 +72,6 @@ export default async function Blog({
   if (!post) {
     notFound();
   }
-
-  const avatars =
-    post.metadata.team?.map((person) => ({
-      src: person.avatar,
-    })) || [];
 
   return (
     <Row fillWidth>

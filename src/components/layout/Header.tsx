@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 import { usePathname } from "next/navigation";
 
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { routes, display, person, about, blog, work } from "@/resources";
 
 import styles from "./Header.module.scss";
-import { ThemeToggle } from "./ThemeToggle";
 
 type TimeDisplayProps = {
   timeZone: string;
